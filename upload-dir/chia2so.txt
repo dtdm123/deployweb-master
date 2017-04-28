@@ -1,0 +1,31 @@
+mov ah,1 
+int 21 
+and al,0f 
+mov bl,al 
+mov ah,2 
+mov dl,5c 
+int 21 
+mov ah,1 
+int 21 
+and al,0f 
+mov bh,al 
+mov al,bl 
+mov ah,0 
+aad 
+div bh 
+mov bh,ah  
+aam 
+mov bl,al 
+mov ah,2 
+mov dl,3d 
+int 21 
+mov dl,bl 
+or dl,30 
+int 21 
+mov ah,2 
+mov dl,3b 
+int 21 
+mov dl,bh 
+or dl,30 
+int 21 
+int 20
